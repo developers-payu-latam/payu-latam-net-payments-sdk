@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B769E3F3-4037-435A-847E-B0A5FF51B2B8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PayuNetSdk</RootNamespace>
+    <AssemblyName>PayuNetSdk</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;FRAMEWORK</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\PayuNetSdk.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;FRAMEWORK</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PayU\Api\PayUCreditCard.cs" />
+    <Compile Include="PayU\Api\PayUCustomers.cs" />
+    <Compile Include="PayU\Api\PayUPlans.cs" />
+    <Compile Include="PayU\Api\PayURecurringBillItem.cs" />
+    <Compile Include="PayU\Api\PayUReports.cs" />
+    <Compile Include="PayU\Api\PayUSubscription.cs" />
+    <Compile Include="PayU\Api\PayUTokens.cs" />
+    <Compile Include="PayU\Builders\AbstractBuilder.cs" />
+    <Compile Include="PayU\Builders\CashRefAuthAndCaptureAuthTransactionBuilder.cs" />
+    <Compile Include="PayU\Builders\BanksInformationBuilder.cs" />
+    <Compile Include="PayU\Builders\CustomerWithCreditCardBuilder.cs" />
+    <Compile Include="PayU\Builders\CreditCardRecurringPaymentBuilder.cs" />
+    <Compile Include="PayU\Builders\RecurringBillItemBuilder.cs" />
+    <Compile Include="PayU\Builders\SubscriptionBuilder.cs" />
+    <Compile Include="PayU\Builders\SubscriptionPlanBuilder.cs" />
+    <Compile Include="PayU\Builders\CreditCardAuthAndCaptureAuthWithTokenTransactionBuilder.cs" />
+    <Compile Include="PayU\Builders\CustomerBuilder.cs" />
+    <Compile Include="PayU\Builders\ExistingOrderBuilder.cs" />
+    <Compile Include="PayU\Builders\Factories\AuthAndCaptureAuthTransactionBuilderFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PayU\Builders\ReportDetailsBuilder.cs" />
+    <Compile Include="PayU\Builders\CreditCardTokenBuilder.cs" />
+    <Compile Include="PayU\Exceptions\PayUException.cs" />
+    <Compile Include="PayU\Messages\BankInfoRequest.cs" />
+    <Compile Include="PayU\Messages\BankInfoResponse.cs" />
+    <Compile Include="PayU\Messages\TransactionReportRequest.cs" />
+    <Compile Include="PayU\Messages\TransactionReportResponse.cs" />
+    <Compile Include="PayU\Messages\OrderReportListResponse.cs" />
+    <Compile Include="PayU\Messages\PingReportResponse.cs" />
+    <Compile Include="PayU\Messages\Enums\ErrorCode.cs" />
+    <Compile Include="PayU\Messages\Enums\ServerType.cs" />
+    <Compile Include="PayU\Messages\RecurringBillItemRequest.cs" />
+    <Compile Include="PayU\Messages\RecurringBillItemResponse.cs" />
+    <Compile Include="PayU\Messages\CreditCardResponse.cs" />
+    <Compile Include="PayU\Messages\CreditCardRequest.cs" />
+    <Compile Include="PayU\Messages\SubscriptionRequest.cs" />
+    <Compile Include="PayU\Messages\SubscriptionResponse.cs" />
+    <Compile Include="PayU\Messages\SubscriptionPlanRequest.cs" />
+    <Compile Include="PayU\Messages\SubscriptionPlanResponse.cs" />
+    <Compile Include="PayU\Messages\CustomerRequest.cs" />
+    <Compile Include="PayU\Messages\CustomerResponse.cs" />
+    <Compile Include="PayU\Messages\Enums\ErrorType.cs" />
+    <Compile Include="PayU\Messages\TokenInfoResponse.cs" />
+    <Compile Include="PayU\Messages\Enums\PaymentMethodType.cs" />
+    <Compile Include="PayU\Messages\PaymentMethodsRequest.cs" />
+    <Compile Include="PayU\Messages\PaymentMethodsResponse.cs" />
+    <Compile Include="PayU\Messages\OrderReportRequest.cs" />
+    <Compile Include="PayU\Messages\OrderReportResponse.cs" />
+    <Compile Include="PayU\Messages\TokenRequest.cs" />
+    <Compile Include="PayU\Messages\TokenResponse.cs" />
+    <Compile Include="PayU\Model\ApiError.cs" />
+    <Compile Include="PayU\Model\CommonResponse.cs" />
+    <Compile Include="PayU\Model\Customers\Customer.cs" />
+    <Compile Include="PayU\Model\PaymentMethods\BankInfo.cs" />
+    <Compile Include="PayU\Model\PaymentMethods\PaymentMethodInfo.cs" />
+    <Compile Include="PayU\Model\Plans\AdditionalValue.cs" />
+    <Compile Include="PayU\Model\Plans\SubscriptionPlan.cs" />
+    <Compile Include="PayU\Model\RecurringBillItems\RecurringBillItem.cs" />
+    <Compile Include="PayU\Model\RecurringPayments\CreditCard.cs" />
+    <Compile Include="PayU\Model\Reports\TransactionReport.cs" />
+    <Compile Include="PayU\Model\Reports\OrderReportList.cs" />
+    <Compile Include="PayU\Model\Reports\OrderReport.cs" />
+    <Compile Include="PayU\Model\Subscriptions\Subscription.cs" />
+    <Compile Include="PayU\Model\Token\CreditCardToken.cs" />
+    <Compile Include="PayU\RequestStrategies\BanksInformationStrategy.cs" />
+    <Compile Include="PayU\RequestStrategies\AbstractPostRequestWithAlternativeDataStrategy.cs" />
+    <Compile Include="PayU\RequestStrategies\AbstractRestRequestWithAlternativeDataStrategy.cs" />
+    <Compile Include="PayU\RequestStrategies\TransactionDetailReportStrategy.cs" />
+    <Compile Include="PayU\RequestStrategies\OrderDetailByReferenceCodeStrategy.cs" />
+    <Compile Include="PayU\RequestStrategies\PingReportRequestStrategy.cs" />
+    <Compile Include="PayU\RequestStrategies\DeleteTokenRequestStrategy.cs" />
+    <Compile Include="PayU\RequestStrategies\CreditCards\CreateCreditCardStrategy.cs" />
+    <Compile Include="PayU\RequestStrategies\CreditCards\DeleteCreditCardStrategy.cs" />
+    <Compile Include="PayU\RequestStrategies\CreditCards\GetCreditCardStrategy.cs" />
+    <Compile Include="PayU\RequestStrategies\CreditCards\UpdateCreditCardStrategy.cs" />
+    <Compile Include="PayU\RequestStrategies\RecurringBillItems\CreateRecurringBillItemStrategy.cs" />
+    <Compile Include="PayU\RequestStrategies\RecurringBillItems\DeleteRecurringBillItemStrategy.cs" />
+    <Compile Include="PayU\RequestStrategies\RecurringBillItems\GetRecurringBillItemStrategy.cs" />
+    <Compile Include="PayU\RequestStrategies\RecurringBillItems\UpdateRecurringBillItemStrategy.cs" />
+    <Compile Include="PayU\RequestStrategies\Subscriptions\CreateSubscriptionStrategy.cs" />
+    <Compile Include="PayU\RequestStrategies\Subscriptions\DeleteSubscriptionStrategy.cs" />
+    <Compile Include="PayU\RequestStrategies\Customers\DeleteCustomerStrategy.cs" />
+    <Compile Include="PayU\RequestStrategies\Customers\GetCustomerStrategy.cs" />
+    <Compile Include="PayU\RequestStrategies\Customers\UpdateCustomerStrategy.cs" />
+    <Compile Include="PayU\RequestStrategies\Customers\CreateCustomerStrategy.cs" />
+    <Compile Include="PayU\RequestStrategies\GetTokenRequestStrategy.cs" />
+    <Compile Include="PayU\RequestStrategies\OrderDetailReportStrategy.cs" />
+    <Compile Include="PayU\RequestStrategies\PaymentMethodsStrategy.cs" />
+    <Compile Include="PayU\RequestStrategies\CreateTokenRequestStrategy.cs" />
+    <Compile Include="PayU\RequestStrategies\Plans\CreateSubscriptionPlanStrategy.cs" />
+    <Compile Include="PayU\RequestStrategies\Plans\DeleteSubscriptionPlanStrategy.cs" />
+    <Compile Include="PayU\RequestStrategies\Plans\GetSubscriptionPlanStrategy.cs" />
+    <Compile Include="PayU\RequestStrategies\Plans\UpdateSubscriptionPlanStrategy.cs" />
+    <Compile Include="PayU\Services\AbstractService.cs" />
+    <Compile Include="PayU\Api\PayU.cs" />
+    <Compile Include="PayU\Api\PayUPayments.cs">
+      <ExcludeFromStyleCop>True</ExcludeFromStyleCop>
+    </Compile>
+    <Compile Include="PayU\Builders\AbstractTransactionBuilder.cs" />
+    <Compile Include="PayU\Builders\AddressBuilder.cs" />
+    <Compile Include="PayU\Builders\AbstractOrderBuilder.cs" />
+    <Compile Include="PayU\Builders\CreditCardAuthAndCaptureAuthTransactionBuilder.cs" />
+    <Compile Include="PayU\Builders\CaptureVoidRefundTransactionBuilder.cs" />
+    <Compile Include="PayU\Builders\AbstractPersonBuilder.cs" />
+    <Compile Include="PayU\Builders\BuyerPersonBuilder.cs" />
+    <Compile Include="PayU\Builders\AuthCaptureExistingOrderBuilder.cs" />
+    <Compile Include="PayU\Builders\AuthCaptureNewOrderBuilder.cs" />
+    <Compile Include="PayU\Builders\CreditCardBuilder.cs" />
+    <Compile Include="PayU\Builders\Factories\OrderBuilderFactory.cs" />
+    <Compile Include="PayU\Builders\PayerPersonBuilder.cs" />
+    <Compile Include="PayU\Builders\SignatureBuilder.cs" />
+    <Compile Include="PayU\Configuration\Enviroment.cs" />
+    <Compile Include="PayU\Handlers\OperationFactory.cs" />
+    <Compile Include="PayU\Messages\Enums\Currency.cs" />
+    <Compile Include="PayU\Messages\Enums\Language.cs" />
+    <Compile Include="PayU\Messages\Enums\Command.cs" />
+    <Compile Include="PayU\Messages\Enums\OrderCancellationCode.cs" />
+    <Compile Include="PayU\Messages\Enums\OrderStatus.cs" />
+    <Compile Include="PayU\Messages\Enums\PaymentCountry.cs" />
+    <Compile Include="PayU\Messages\Enums\PaymentMethod.cs" />
+    <Compile Include="PayU\Messages\Enums\PaymentMethodMain.cs" />
+    <Compile Include="PayU\Messages\Enums\ResponseCode.cs" />
+    <Compile Include="PayU\Messages\AbstractRequest.cs" />
+    <Compile Include="PayU\Messages\AbstractResponse.cs" />
+    <Compile Include="PayU\Messages\Enums\TransactionErrorCode.cs" />
+    <Compile Include="PayU\Messages\Enums\TransactionPendingReason.cs" />
+    <Compile Include="PayU\Messages\Enums\TransactionResponseCode.cs" />
+    <Compile Include="PayU\Messages\Enums\TransactionSource.cs" />
+    <Compile Include="PayU\Messages\Enums\TransactionState.cs" />
+    <Compile Include="PayU\Messages\Enums\TransactionType.cs" />
+    <Compile Include="PayU\Messages\PaymentRequest.cs" />
+    <Compile Include="PayU\Messages\PaymentResponse.cs" />
+    <Compile Include="PayU\Messages\TransactionResponse.cs" />
+    <Compile Include="PayU\Model\AdditionalValue.cs" />
+    <Compile Include="PayU\Model\PaymentMethods\CreditCardSwipe.cs" />
+    <Compile Include="PayU\Model\Payments\CreditCard.cs" />
+    <Compile Include="PayU\Model\Personal\Address.cs" />
+    <Compile Include="PayU\Model\Personal\Buyer.cs" />
+    <Compile Include="PayU\Model\Merchant.cs" />
+    <Compile Include="PayU\Messages\PingRequest.cs" />
+    <Compile Include="PayU\Messages\PingResponse.cs" />
+    <Compile Include="PayU\Model\Payments\BankListInformation.cs" />
+    <Compile Include="PayU\Model\Payments\Order.cs" />
+    <Compile Include="PayU\Model\Personal\Payer.cs" />
+    <Compile Include="PayU\Model\Personal\Person.cs" />
+    <Compile Include="PayU\Model\Payments\Transaction.cs" />
+    <Compile Include="PayU\PayUParameterName.cs" />
+    <Compile Include="PayU\RequestStrategies\AbstractRestRequestStrategy.cs" />
+    <Compile Include="PayU\RequestStrategies\AbstractPostRequestStrategy.cs" />
+    <Compile Include="PayU\RequestStrategies\SubmitTransactionStrategy.cs" />
+    <Compile Include="PayU\RequestStrategies\PingRequestStrategy.cs" />
+    <Compile Include="PayU\Security\ServerCertificateValidationCallback.cs" />
+    <Compile Include="PayU\Services\PaymentService.cs" />
+    <Compile Include="PayU\Services\RecurringPaymentService.cs" />
+    <Compile Include="PayU\Services\ReportService.cs" />
+    <Compile Include="PayU\Services\TokenService.cs" />
+    <Compile Include="PayU\Util\DataConverter.cs" />
+    <Compile Include="PayU\Util\DataStructures\ReadOnlyDictionary.cs" />
+    <Compile Include="PayU\Util\DataStructures\SerializableDictionary.cs" />
+    <Compile Include="PayU\Util\Log4NetProxy\ILog.cs" />
+    <Compile Include="PayU\Util\Log4NetProxy\Loader.cs" />
+    <Compile Include="PayU\Util\Log4NetProxy\LogImpl.cs" />
+    <Compile Include="PayU\Util\Log4NetProxy\LogManager.cs" />
+    <Compile Include="PayU\Util\Log4NetProxy\XmlConfigurator.cs" />
+    <Compile Include="PayU\Util\Network\IpAddress.cs" />
+    <Compile Include="PayU\Validators\AuthOrderValidator.cs" />
+    <Compile Include="PayU\Validators\Base\ValidatorLoader.cs" />
+    <Compile Include="PayU\Validators\CreateRecurringBillItemValidator.cs" />
+    <Compile Include="PayU\Validators\RecurringBillItemIdRecurringBillItemValidator.cs" />
+    <Compile Include="PayU\Validators\DeleteCreditCardValidator.cs" />
+    <Compile Include="PayU\Validators\TokenCreditCardValidator.cs" />
+    <Compile Include="PayU\Validators\SubscriptionIdSubscriptionValidator.cs" />
+    <Compile Include="PayU\Validators\SubscriptionPlanIdSubscriptionPlanValidator.cs" />
+    <Compile Include="PayU\Validators\CustomerIdCustomerValidator.cs" />
+    <Compile Include="PayU\Validators\CreateAuthTransactionValidator.cs" />
+    <Compile Include="PayU\Validators\AuthCreditCardValidator.cs" />
+    <Compile Include="PayU\Validators\Base\IValidatable.cs" />
+    <Compile Include="PayU\Validators\Base\IValidator.cs" />
+    <Compile Include="PayU\Validators\Base\Validator.cs" />
+    <Compile Include="PayU\Validators\CreateCreditCardRecurringPaymentValidator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\PayUSdkMessages.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PayUSdkMessages.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RestSharp\Authenticators\HttpBasicAuthenticator.cs" />
+    <Compile Include="RestSharp\Authenticators\IAuthenticator.cs" />
+    <Compile Include="RestSharp\Authenticators\NtlmAuthenticator.cs" />
+    <Compile Include="RestSharp\Authenticators\OAuth1Authenticator.cs" />
+    <Compile Include="RestSharp\Authenticators\OAuth2Authenticator.cs" />
+    <Compile Include="RestSharp\Authenticators\OAuth\Extensions\CollectionExtensions.cs" />
+    <Compile Include="RestSharp\Authenticators\OAuth\Extensions\OAuthExtensions.cs" />
+    <Compile Include="RestSharp\Authenticators\OAuth\Extensions\StringExtensions.cs" />
+    <Compile Include="RestSharp\Authenticators\OAuth\Extensions\TimeExtensions.cs" />
+    <Compile Include="RestSharp\Authenticators\OAuth\HttpPostParameter.cs" />
+    <Compile Include="RestSharp\Authenticators\OAuth\HttpPostParameterType.cs" />
+    <Compile Include="RestSharp\Authenticators\OAuth\OAuthParameterHandling.cs" />
+    <Compile Include="RestSharp\Authenticators\OAuth\OAuthSignatureMethod.cs" />
+    <Compile Include="RestSharp\Authenticators\OAuth\OAuthSignatureTreatment.cs" />
+    <Compile Include="RestSharp\Authenticators\OAuth\OAuthTools.cs" />
+    <Compile Include="RestSharp\Authenticators\OAuth\OAuthType.cs" />
+    <Compile Include="RestSharp\Authenticators\OAuth\OAuthWebQueryInfo.cs" />
+    <Compile Include="RestSharp\Authenticators\OAuth\OAuthWorkflow.cs" />
+    <Compile Include="RestSharp\Authenticators\OAuth\WebPair.cs" />
+    <Compile Include="RestSharp\Authenticators\OAuth\WebPairCollection.cs" />
+    <Compile Include="RestSharp\Authenticators\OAuth\WebParameter.cs" />
+    <Compile Include="RestSharp\Authenticators\OAuth\WebParameterCollection.cs" />
+    <Compile Include="RestSharp\Authenticators\SimpleAuthenticator.cs" />
+    <Compile Include="RestSharp\Compression\ZLib\Crc32.cs" />
+    <Compile Include="RestSharp\Compression\ZLib\FlushType.cs" />
+    <Compile Include="RestSharp\Compression\ZLib\GZipStream.cs" />
+    <Compile Include="RestSharp\Compression\ZLib\Inflate.cs" />
+    <Compile Include="RestSharp\Compression\ZLib\InfTree.cs" />
+    <Compile Include="RestSharp\Compression\ZLib\ZLib.cs" />
+    <Compile Include="RestSharp\Compression\ZLib\ZLibCodec.cs" />
+    <Compile Include="RestSharp\Compression\ZLib\ZLibConstants.cs" />
+    <Compile Include="RestSharp\Compression\ZLib\ZLibStream.cs" />
+    <Compile Include="RestSharp\Deserializers\DeserializeAsAttribute.cs" />
+    <Compile Include="RestSharp\Deserializers\DotNetXmlDeserializer.cs" />
+    <Compile Include="RestSharp\Deserializers\IDeserializer.cs" />
+    <Compile Include="RestSharp\Deserializers\JsonDeserializer.cs" />
+    <Compile Include="RestSharp\Deserializers\XmlAttributeDeserializer.cs" />
+    <Compile Include="RestSharp\Deserializers\XmlDeserializer.cs" />
+    <Compile Include="RestSharp\Enum.cs" />
+    <Compile Include="RestSharp\Extensions\MiscExtensions.cs" />
+    <Compile Include="RestSharp\Extensions\MonoHttp\Helpers.cs" />
+    <Compile Include="RestSharp\Extensions\MonoHttp\HtmlEncoder.cs" />
+    <Compile Include="RestSharp\Extensions\MonoHttp\HttpUtility.cs" />
+    <Compile Include="RestSharp\Extensions\ReflectionExtensions.cs" />
+    <Compile Include="RestSharp\Extensions\ResponseExtensions.cs" />
+    <Compile Include="RestSharp\Extensions\StringExtensions.cs" />
+    <Compile Include="RestSharp\Extensions\XmlExtensions.cs" />
+    <Compile Include="RestSharp\FileParameter.cs" />
+    <Compile Include="RestSharp\Http.Async.cs" />
+    <Compile Include="RestSharp\Http.cs" />
+    <Compile Include="RestSharp\Http.Sync.cs" />
+    <Compile Include="RestSharp\HttpCookie.cs" />
+    <Compile Include="RestSharp\HttpFile.cs" />
+    <Compile Include="RestSharp\HttpHeader.cs" />
+    <Compile Include="RestSharp\HttpParameter.cs" />
+    <Compile Include="RestSharp\HttpResponse.cs" />
+    <Compile Include="RestSharp\IHttp.cs" />
+    <Compile Include="RestSharp\IHttpFactory.cs" />
+    <Compile Include="RestSharp\IHttpResponse.cs" />
+    <Compile Include="RestSharp\IRestClient.cs" />
+    <Compile Include="RestSharp\IRestRequest.cs" />
+    <Compile Include="RestSharp\IRestResponse.cs" />
+    <Compile Include="RestSharp\Parameter.cs" />
+    <Compile Include="RestSharp\RestClient.Async.cs" />
+    <Compile Include="RestSharp\RestClient.cs" />
+    <Compile Include="RestSharp\RestClient.Sync.cs" />
+    <Compile Include="RestSharp\RestClientExtensions.cs" />
+    <Compile Include="RestSharp\RestRequest.cs" />
+    <Compile Include="RestSharp\RestRequestAsyncHandle.cs" />
+    <Compile Include="RestSharp\RestResponse.cs" />
+    <Compile Include="RestSharp\RestResponseCookie.cs" />
+    <Compile Include="RestSharp\Serializers\DotNetXmlSerializer.cs" />
+    <Compile Include="RestSharp\Serializers\ISerializer.cs" />
+    <Compile Include="RestSharp\Serializers\JsonSerializer.cs" />
+    <Compile Include="RestSharp\Serializers\SerializeAsAttribute.cs" />
+    <Compile Include="RestSharp\Serializers\XmlSerializer.cs" />
+    <Compile Include="RestSharp\SimpleJson.cs" />
+    <Compile Include="RestSharp\Validation\Require.cs" />
+    <Compile Include="RestSharp\Validation\Validate.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="RestSharp\Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\log4net.dll" />
+    <EmbeddedResource Include="Resources\PayUSdkMessages.es.resx" />
+    <EmbeddedResource Include="Resources\PayUSdkMessages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>PayUSdkMessages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

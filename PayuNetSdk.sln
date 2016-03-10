@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayuNetSdk", "PayuNetSdk\PayuNetSdk.csproj", "{B769E3F3-4037-435A-847E-B0A5FF51B2B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayuNetSdkConsole", "PayuNetSdkConsole\PayuNetSdkConsole.csproj", "{55276CB5-9989-459C-BCA2-ABF6852465D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayuNetSdk.Tests", "PayuNetSdk.Tests\PayuNetSdk.Tests.csproj", "{53B6B2D7-F698-45B1-8026-815E8BDC660D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B769E3F3-4037-435A-847E-B0A5FF51B2B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B769E3F3-4037-435A-847E-B0A5FF51B2B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B769E3F3-4037-435A-847E-B0A5FF51B2B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B769E3F3-4037-435A-847E-B0A5FF51B2B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55276CB5-9989-459C-BCA2-ABF6852465D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55276CB5-9989-459C-BCA2-ABF6852465D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55276CB5-9989-459C-BCA2-ABF6852465D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55276CB5-9989-459C-BCA2-ABF6852465D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53B6B2D7-F698-45B1-8026-815E8BDC660D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53B6B2D7-F698-45B1-8026-815E8BDC660D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53B6B2D7-F698-45B1-8026-815E8BDC660D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53B6B2D7-F698-45B1-8026-815E8BDC660D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
