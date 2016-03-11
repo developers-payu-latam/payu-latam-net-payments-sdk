@@ -1,6 +1,24 @@
-﻿// <copyright file="RecurringPaymentService.cs" company="PayU Latam">
-//    PayU Latam. All rights reserved.
-// </copyright>
+// The MIT License (MIT)
+//
+// Copyright (c) 2016 PayU Latam
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
 // <author>Jorge D. Porras</author>using System;
 
 using PayuNetSdk.PayU.Messages;
@@ -22,7 +40,7 @@ using System.Collections.Generic;
 namespace PayuNetSdk.PayU.Services
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     internal class RecurringPaymentService : AbstractService
     {
@@ -100,7 +118,7 @@ namespace PayuNetSdk.PayU.Services
         public CustomerResponse DeleteCustomer(CustomerRequest request)
         {
             base.Validate<Customer, CustomerRequest>(request, ValidatorContext.DELETE);
-            
+
             AbstractRestRequestWithAlternativeDataStrategy<CustomerRequest, Customer, SdkError, CommonResponse> requestStrategy =
                 new DeleteCustomerStrategy(request);
 
@@ -210,7 +228,7 @@ namespace PayuNetSdk.PayU.Services
         /// <param name="request">The request.</param>
         /// <returns></returns>
         public SubscriptionResponse CreateSubscription(SubscriptionRequest request)
-        {            
+        {
             AbstractRestRequestStrategy<SubscriptionRequest, Subscription, SdkError> requestStrategy =
                 new CreateSubscriptionStrategy(request);
 
@@ -256,7 +274,7 @@ namespace PayuNetSdk.PayU.Services
         public CreditCardResponse CreateCreditCard(CreditCardRequest request)
         {
             base.Validate<CreditCard, CreditCardRequest>(request, ValidatorContext.CREATE);
-            
+
             AbstractRestRequestStrategy<CreditCardRequest, CreditCard, SdkError> requestStrategy =
                 new CreateCreditCardStrategy(request);
 
@@ -343,7 +361,7 @@ namespace PayuNetSdk.PayU.Services
         public RecurringBillItemResponse CreateRecurringBillItem(RecurringBillItemRequest request)
         {
             base.Validate<RecurringBillItem, RecurringBillItemRequest>(request, ValidatorContext.CREATE);
-            
+
             AbstractRestRequestStrategy<RecurringBillItemRequest, RecurringBillItem, SdkError> requestStrategy =
                 new CreateRecurringBillItemStrategy(request);
 
@@ -364,7 +382,7 @@ namespace PayuNetSdk.PayU.Services
         public RecurringBillItemResponse UpdateRecurringBillItem(RecurringBillItemRequest request)
         {
             base.Validate<RecurringBillItem, RecurringBillItemRequest>(request, ValidatorContext.UPDATE);
-            
+
             AbstractRestRequestStrategy<RecurringBillItemRequest, RecurringBillItem, SdkError> requestStrategy =
                 new UpdateRecurringBillItemStrategy(request);
 

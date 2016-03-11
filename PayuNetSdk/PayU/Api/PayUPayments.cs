@@ -1,6 +1,24 @@
-﻿// <copyright file="PayUPayments.cs" company="PayU Latam">
-//    PayU Latam. All rights reserved.
-// </copyright>
+// The MIT License (MIT)
+//
+// Copyright (c) 2016 PayU Latam
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
 // <author>Jorge D. Porras</author>
 
 namespace PayuNetSdk.PayU.Api
@@ -23,7 +41,7 @@ namespace PayuNetSdk.PayU.Api
         /// <summary>
         /// PayUPayments instance for singleton pattern.
         /// </summary>
-        private static PayUPayments instance; 
+        private static PayUPayments instance;
 
         private static object syncLock = new object();
 
@@ -35,7 +53,7 @@ namespace PayuNetSdk.PayU.Api
         /// <summary>
         /// Prevents a default instance of the <see cref="PayUPayments"/> class from being created.
         /// </summary>
-        private PayUPayments() 
+        private PayUPayments()
         {
             this.paymentService = new PaymentService();
         }
@@ -81,7 +99,7 @@ namespace PayuNetSdk.PayU.Api
         /// <summary>
         /// Does authorization request to payment service.
         /// </summary>
-        /// <param name="parameters">The parameters that contains information 
+        /// <param name="parameters">The parameters that contains information
         /// about authorization request.</param>
         /// <returns><see cref="PaymentResponse"/> instance that contains the operation result.</returns>
         public PaymentResponse DoAuthorization(IDictionary<string, string> parameters)
@@ -100,14 +118,14 @@ namespace PayuNetSdk.PayU.Api
         /// <summary>
         /// Does authorization and capture request to payment service.
         /// </summary>
-        /// <param name="parameters">The parameters that contains information 
+        /// <param name="parameters">The parameters that contains information
         /// about authorization and capture request.</param>
         /// <returns><see cref="PaymentResponse"/> instance that contains the operation result.</returns>
         public PaymentResponse DoAuthorizationAndCapture(IDictionary<string, string> parameters)
         {
             PaymentRequest request = base.CreateBaseRequest<PaymentRequest>(ServerType.Payments, parameters);
 
-            AbstractTransactionBuilder builder = 
+            AbstractTransactionBuilder builder =
                 AuthAndCaptureAuthTransactionBuilderFactory.GetTransactionBuilder(
                     request, TransactionType.AUTHORIZATION_AND_CAPTURE);
 
@@ -119,7 +137,7 @@ namespace PayuNetSdk.PayU.Api
         /// <summary>
         /// Does capture request to payment service.
         /// </summary>
-        /// <param name="parameters">The parameters that contains information 
+        /// <param name="parameters">The parameters that contains information
         /// about capture request.</param>
         /// <returns><see cref="PaymentResponse"/> instance that contains the operation result.</returns>
         public PaymentResponse DoCapture(IDictionary<string, string> parameters)
@@ -137,7 +155,7 @@ namespace PayuNetSdk.PayU.Api
         /// <summary>
         /// Does void request to payment service.
         /// </summary>
-        /// <param name="parameters">The parameters that contains information 
+        /// <param name="parameters">The parameters that contains information
         /// about void request.</param>
         /// <returns><see cref="PaymentResponse"/> instance that contains the operation result.</returns>
         public PaymentResponse DoVoid(IDictionary<string, string> parameters)
@@ -155,7 +173,7 @@ namespace PayuNetSdk.PayU.Api
         /// <summary>
         /// Does refund request to payment service.
         /// </summary>
-        /// <param name="parameters">The parameters that contains information 
+        /// <param name="parameters">The parameters that contains information
         /// about refund request.</param>
         /// <returns><see cref="PaymentResponse"/> instance that contains the operation result.</returns>
         public PaymentResponse DoRefund(IDictionary<string, string> parameters)
@@ -174,8 +192,8 @@ namespace PayuNetSdk.PayU.Api
         /// Gets the payment methods.
         /// </summary>
         /// <returns><see cref="PaymentMethodsResponse"/> instance that contains the operation result.</returns>
-        public PaymentMethodsResponse GetPaymentMethods() 
-        { 
+        public PaymentMethodsResponse GetPaymentMethods()
+        {
             PaymentMethodsRequest request = base.CreateBaseRequest<PaymentMethodsRequest>(ServerType.Payments);
 
             return this.paymentService.GetPaymentMethods(request);
@@ -184,7 +202,7 @@ namespace PayuNetSdk.PayU.Api
         /// <summary>
         /// Gets the pse banks.
         /// </summary>
-        /// <param name="parameters">The parameters that contains information 
+        /// <param name="parameters">The parameters that contains information
         /// about PseBankInfo request.</param>
         /// <returns><see cref="BankInfoResponse"/> instance that contains the operation result.</returns>
         public BankInfoResponse GetPseBanks(IDictionary<string, string> parameters)
